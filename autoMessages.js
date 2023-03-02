@@ -1,23 +1,37 @@
 const { Client, Intents, Collection, MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
 
-//news channel message
-exports.newsChannel = new MessageEmbed()
+//failed to send
+exports.failedMessage = new MessageEmbed()
             .setColor('#0099ff')
-            .setDescription(`You **MUST** tag your post with one of the following tags, or it will get deleted automatically.
-
-            [NEWS] - A thread is created to discuss this article.
-            [POLITICS] - A thread is created to discuss politics.
-            [SHARE] - You're not interested in making a thread to chat in.
-            
-            Political conversations can get hot. We're all friends here. Don't be a dick.`);
+            .setDescription(`Your message was deleted because it was not properly tagged. Replies to any post should be in the designated thread *(if applicable)*. If you would like to repost your message, please be sure to use one of the designated tags in that channel.`);
 
 //support channel message
 exports.supportChannel = new MessageEmbed()
             .setColor('#0099ff')
-            .setDescription(`You **MUST** tag your post with one of the following tags, or it will get deleted automatically.
+            .setDescription(`You **MUST** start your post with one of the following tags, or it will get deleted automatically.
 
-            [FEEDBACK] - A thread is created for feedback, advice, or discussing the topic at hand.
-            [VENT] - Just for venting! No feedback is being asked for, so please don’t provide any.
-            [HAPPY] - A thread is created so we can celebrate with you!
+            !HAPPY - *Share some great news with the server!*
+            !FEEDBACK - *Ask the community for feedback or advice.*
+            !VENT - *Just venting! You don't want feedback, advice, or replies - but reaction emoji's are welcomed.*
+
+*Please refrain from venting about server members, directly or indirectly.*
+
+*For server complaints, or conflicts with another Discord member, please contact a Mod.*`);
+
+//buy-sell channel message
+exports.salesChannel = new MessageEmbed()
+            .setColor('#0099ff')
+            .setDescription(`You **MUST** start your post with one of the following tags, or it will get deleted automatically.
+
+            !BUY - *Shopping for an item! Don't forget to mention your budget!*
+            !SELL - *Selling an item! Don't forget to mention your price!*`);
+
+//ask-an-admin channel message
+exports.adminChannel = new MessageEmbed()
+            .setColor('#0099ff')
+            .setDescription(`You **MUST** start your post with one of the following tags, or it will get deleted automatically.
+
+            !ASSIST - *Get assistance with a problem or concern.*
+            !IDEA - *Make suggestions for the server.*
             
-            No venting about people on the server. No passive-aggressive vents.`);
+            *Please allow our moderation team a few hours to respond.*`);
